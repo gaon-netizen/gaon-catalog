@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="가온스텐 스테인리스 부속 카탈로그. 상품번호, 제품명, 치수, 규격으로 빠르게 검색할 수 있습니다.">
+<title>가온스텐 부속 카탈로그</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="brand">GAON STAINLESS</div>
+<h1>가온스텐 부속 카탈로그</h1>
+<p class="sub">상품번호 · 제품명 · 치수 · 규격으로 빠르게 찾아보세요.</p>
+<input id="search" class="search" type="search" autocomplete="off" placeholder="예: G-001, 물홈통, 200×200, Ø76.4">
+<div id="categories" class="chips" aria-label="제품 카테고리"></div>
+</div></header>
+<main class="wrap">
+<section class="notice"><b>문의 방법</b><span>필요한 제품의 <strong>상품번호</strong>와 규격을 말씀해 주세요.</span></section>
+<div class="result"><span id="count">상품 0개</span><span id="source">전체 상품</span></div>
+<section id="grid" class="grid"></section>
+</main>
+<template id="tpl"><article class="card" tabindex="0">
+<div class="photoBox"><img class="photo" loading="lazy" decoding="async"><div class="noImage" hidden>이미지 준비중</div></div>
+<div class="body"><div class="category"></div><h2 class="name"></h2>
+<dl><div class="row-code"><dt>상품번호</dt><dd class="code"></dd></div><div class="row-size"><dt>치수</dt><dd class="size"></dd></div><div class="row-spec"><dt>규격</dt><dd class="spec"></dd></div><div class="row-detail"><dt>상세</dt><dd class="detail"></dd></div></dl>
+<button class="copy" type="button">상품번호 복사</button></div></article></template>
+
+<dialog id="productDialog" class="productDialog">
+<button id="dialogClose" class="dialogClose" type="button" aria-label="닫기">×</button>
+<div class="dialogPhotoBox"><img id="dialogPhoto" class="dialogPhoto"><div id="dialogNoImage" class="noImage" hidden>이미지 준비중</div></div>
+<div class="dialogBody">
+<div id="dialogCategory" class="category"></div>
+<h2 id="dialogName" class="dialogName"></h2>
+<dl id="dialogInfo" class="dialogInfo"></dl>
+<button id="dialogCopy" class="copy" type="button">상품번호 복사</button>
+</div>
+</dialog>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
